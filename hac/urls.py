@@ -23,7 +23,7 @@ from reservation_scans.views import ReservationScansViewSet
 from reservations.views import ReservationsViewSet
 from scans.views import ScansViewSet
 from offices.views import OfficesViewSet
-
+from supervisor.views import SupervisorsViewSet
 # from rest_framework_swagger.views import get_swagger_view
 
 # schema_view = get_swagger_view(title=' API')
@@ -38,6 +38,7 @@ router.register(r"%s/members" % office, MembersViewSet)
 router.register(r'%s/reservation_scans' % office, ReservationScansViewSet)
 router.register(r'%s/reservations' % office, ReservationsViewSet)
 router.register(r'%s/scans' % office, ScansViewSet)
+router.register(r'%s/supervisors' % office, SupervisorsViewSet)
 router.register(r'offices', OfficesViewSet)
 
 urlpatterns = [

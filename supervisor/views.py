@@ -7,7 +7,11 @@ from .models import Supervisor
 from .serialiser import SupervisorsSerialiser
 # Create your views here.
 
-class ContainersViewSet(viewsets.ModelViewSet):
+class SupervisorsViewSet(viewsets.ModelViewSet):
+
+    def get_queryset(self):
+        office = self.kwargs['office_id']
+        return Supervisor.objects.filter(office = office)
 
     queryset = Supervisor.objects.all()
     serializer_class = SupervisorsSerialiser
