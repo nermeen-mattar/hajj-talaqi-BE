@@ -11,5 +11,5 @@ class ScansViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         office = self.kwargs['office_id']
         return Scan.objects.filter(office = office)
-    queryset = Scan.objects.all()
+    queryset = Scan.objects.all().order_by("created_at")
     serializer_class = ScansSerialiser

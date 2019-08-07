@@ -13,5 +13,5 @@ class SupervisorsViewSet(viewsets.ModelViewSet):
         office = self.kwargs['office_id']
         return Supervisor.objects.filter(office = office)
 
-    queryset = Supervisor.objects.all()
+    queryset = Supervisor.objects.all().order_by("created_at")
     serializer_class = SupervisorsSerialiser

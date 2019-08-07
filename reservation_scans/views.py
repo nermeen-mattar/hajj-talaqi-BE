@@ -11,5 +11,6 @@ class ReservationScansViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         office = self.kwargs['office_id']
         return ReservationScan.objects.filter(office = office)
-    queryset = ReservationScan.objects.all()
+
+    queryset = ReservationScan.objects.all().order_by("created_at")
     serializer_class = ReservationScansSerialiser
