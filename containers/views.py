@@ -9,5 +9,5 @@ from .serialiser import ContainersSerialiser
 
 class ContainersViewSet(viewsets.ModelViewSet):
 
-    queryset = Container.objects.all().order_by("created_at")
+    queryset = Container.objects.all().order_by("-created_at")
     serializer_class = ContainersSerialiser

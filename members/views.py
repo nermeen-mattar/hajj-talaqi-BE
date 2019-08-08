@@ -13,5 +13,5 @@ class MembersViewSet(viewsets.ModelViewSet):
         office = self.kwargs['office_id']
         return Member.objects.filter(office = office)
 
-    queryset = Member.objects.all().order_by("created_at")
+    queryset = Member.objects.all().order_by("-created_at")
     serializer_class = MembersSerialiser
